@@ -243,10 +243,7 @@ export function DonationModal({ artist, isOpen, onClose }: DonationModalProps) {
                 <span>{error}</span>
                 {error.includes("MetaMask is not installed") && (
                   <a
-                    href="https://metamask.io/download/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-4 bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded-lg text-sm font-medium transition-colors flex items-center space-x-1"
+                   
                   >
                     <span>Install</span>
                     <ExternalLink className="h-3 w-3" />

@@ -139,10 +139,7 @@ export default function HomePage() {
                   </Button>
                   {!isMetaMaskInstalled() && (
                     <a
-                      href="https://metamask.io/download/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-slate-400 hover:text-white transition-colors flex items-center space-x-1"
+                     
                     >
                      
                       
@@ -196,10 +193,7 @@ export default function HomePage() {
               <span>{walletError}</span>
               {walletError.includes("MetaMask is not installed") && (
                 <a
-                  href="https://metamask.io/download/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center space-x-2"
+                 
                 >
                   <span>Install MetaMask</span>
                   <ExternalLink className="h-4 w-4" />
@@ -228,10 +222,7 @@ export default function HomePage() {
                 <li>
                   Visit{" "}
                   <a
-                    href="https://metamask.io/download/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
+                    
                   >
                     metamask.io/download
                   </a>
@@ -243,10 +234,7 @@ export default function HomePage() {
               </ol>
               <div className="pt-4">
                 <a
-                  href="https://metamask.io/download/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+                 
                 >
                   <span>Install MetaMask</span>
                   <ExternalLink className="h-4 w-4" />

@@ -20,10 +20,7 @@ export function MetaMaskGuide() {
           <li>
             Visit{" "}
             <a
-              href="https://metamask.io/download/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:underline"
+              
             >
               metamask.io/download
             </a>
@@ -35,10 +32,7 @@ export function MetaMaskGuide() {
         </ol>
         <div className="pt-4">
           <a
-            href="https://metamask.io/download/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+          
           >
             <span>Install MetaMask</span>
             <ExternalLink className="h-4 w-4" />

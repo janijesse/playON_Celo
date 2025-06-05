@@ -146,7 +146,7 @@ export function WalletAuthModal({ isOpen, onClose }: WalletAuthModalProps) {
                 <div className="flex items-center space-x-4">
                   <Palette className="h-8 w-8 text-white" />
                   <div className="text-left">
-                    <p className="text-white font-semibold text-lg">PlayON</p>
+                    <p className="text-white font-semibold text-lg">Artist</p>
                     <p className="text-slate-400 text-sm">Stream your performances and earn crypto tips</p>
                   </div>
                 </div>
