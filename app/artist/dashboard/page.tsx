@@ -243,7 +243,7 @@ export default function ArtistDashboard() {
             <CardContent className="p-6 text-center">
               <DollarSign className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
               <p className="text-2xl font-bold text-white">{totalDonations.toFixed(3)}</p>
-              <p className="text-slate-400 text-sm">ETH earned</p>
+              <p className="text-slate-400 text-sm">USDC earned</p>
             </CardContent>
           </Card>
 
@@ -351,7 +351,7 @@ export default function ArtistDashboard() {
                   <p className="text-2xl font-bold text-blue-400">
                     {artistDonations.length > 0 ? (totalDonations / artistDonations.length).toFixed(4) : "0.000"}
                   </p>
-                  <p className="text-sm text-slate-400">Avg tip (ETH)</p>
+                  <p className="text-sm text-slate-400">Avg tip (USDC)</p>
                 </div>
               </div>
 
@@ -372,19 +372,10 @@ export default function ArtistDashboard() {
                 </div>
               </div>
 
-              {/* Quick Actions */}
               <div className="space-y-3 pt-4 border-t border-white/10">
-                <h4 className="text-white font-medium">Quick Actions</h4>
+               
                 <div className="grid grid-cols-2 gap-3">
-                  <Button
-                    onClick={() => setShowLocationModal(true)}
-                    variant="outline"
-                    size="sm"
-                    className="border-slate-600 text-slate-300 hover:bg-slate-800 rounded-xl"
-                  >
-                    <MapPin className="h-4 w-4 mr-2" />
-                    Update Location
-                  </Button>
+                
                   <Button
                     onClick={() => router.push("/")}
                     variant="outline"
@@ -415,14 +406,8 @@ export default function ArtistDashboard() {
                   <DollarSign className="h-8 w-8 text-violet-400" />
                 </div>
                 <p className="text-slate-300 font-medium">No tips yet</p>
-                <p className="text-sm text-slate-400 mt-1">Start streaming to receive tips from your fans!</p>
-                <Button
-                  onClick={() => setShowStreamModal(true)}
-                  className="mt-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                 
-                </Button>
+                
+             
               </div>
             ) : (
               <div className="space-y-4 max-h-80 overflow-y-auto">
@@ -457,9 +442,7 @@ export default function ArtistDashboard() {
       {/* Start Stream Modal */}
       <Dialog open={showStreamModal} onOpenChange={setShowStreamModal}>
         <DialogContent className="sm:max-w-md bg-slate-900/95 backdrop-blur-xl border-slate-700 rounded-3xl">
-          <DialogHeader className="text-center space-y-3">
-            <DialogTitle className="text-2xl font-semibold text-white">Start Streaming</DialogTitle>
-          </DialogHeader>
+       
           <div className="space-y-6 pt-4">
             <Input
               placeholder="Stream title (e.g., Live Folk Music)"

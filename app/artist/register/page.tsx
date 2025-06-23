@@ -122,72 +122,15 @@ export default function ArtistRegisterPage() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="location">Ubicación</Label>
-                <Textarea
-                  id="location"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleChange}
-                  placeholder="Ej: Plaza San Martín, Buenos Aires"
-                  required
-                />
-              </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="latitude">Latitud</Label>
-                  <Input
-                    id="latitude"
-                    name="latitude"
-                    type="number"
-                    step="any"
-                    value={formData.latitude}
-                    onChange={handleChange}
-                    placeholder="-34.6037"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="longitude">Longitud</Label>
-                  <Input
-                    id="longitude"
-                    name="longitude"
-                    type="number"
-                    step="any"
-                    value={formData.longitude}
-                    onChange={handleChange}
-                    placeholder="-58.3816"
-                    required
-                  />
-                </div>
+
+
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="duration">Duración (minutos)</Label>
-                <Input
-                  id="duration"
-                  name="duration"
-                  type="number"
-                  value={formData.duration}
-                  onChange={handleChange}
-                  placeholder="120"
-                  required
-                />
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="streamingLink">Link de streaming</Label>
-                <Input
-                  id="streamingLink"
-                  name="streamingLink"
-                  type="url"
-                  value={formData.streamingLink}
-                  onChange={handleChange}
-                  placeholder="https://youtube.com/watch?v=..."
-                  required
-                />
-              </div>
+
+
 
               <div className="space-y-2">
                 <Label htmlFor="walletAddress">Dirección de wallet (ETH)</Label>

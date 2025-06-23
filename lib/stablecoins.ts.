@@ -1,0 +1,129 @@
+export interface Artist {
+  id: string;
+  name: string;
+  location: string;
+  latitude: number;
+  longitude: number;
+  duration: number; // en minutos
+  walletAddress: string;
+  createdAt: Date;
+  isActive: boolean;
+  userId: string; // Vinculado al usuario
+  // Stream data
+  streamId?: string; // ID único del stream
+  streamTitle?: string;
+  streamDescription?: string;
+  viewerCount?: number;
+}
+
+export interface Token {
+  symbol: string;
+  name: string;
+  address: string;
+  decimals: number;
+  icon?: string | JSX.Element; // MODIFICADO AQUÍ: opcional y permite JSX.Element
+}
+
+export interface Donation {
+  id: string;
+  artistId: string;
+  amount: string;
+  token: Token; // Usará la interfaz Token actualizada
+  txHash: string;
+  donorAddress: string;
+  timestamp: Date;
+}
+
+export interface UserLocation {
+  latitude: number;
+  longitude: number;
+  address?: string;
+}
+
+export interface ArtistWithDistance extends Artist {
+  distance?: number; // en kilómetros
+}
+
+export type UserType = "user" | "artist";
+
+export interface User {
+  id: string;
+  walletAddress: string;
+  type: UserType;
+  name: string;
+  createdAt: Date;
+  isActive: boolean;
+  // Datos específicos del artista si aplica
+  artistProfile?: {
+    artisticName: string;
+    bio?: string;
+    genres?: string[];
+  };
+}
+
+export interface AuthState {
+  isAuthenticated: boolean;
+  currentUser: User | null;
+  isLoading: boolean;
+}
+
+export interface StreamData {
+  id: string;
+  artistId: string;
+  title: string;
+  description?: string;
+  isLive: boolean;
+  viewerCount: number;
+  startedAt: Date;
+  thumbnailUrl?: string;
+  // Simulated stream URL for demo
+  demoVideoUrl?: string;
+}
+
+Archivo 2: lib/stablecoins.ts (Modificado para usar Token de lib/types.ts)
+
+import type { Token } from './types'; // Importar Token de lib/types.ts
+
+// Array de stablecoins soportadas, usando la interfaz Token
+export const SUPPORTED_STABLECOINS: Token[] = [
+  {
+    name: "Celo Dollar",
+    symbol: "cUSD",
+    address: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+    decimals: 18,
+    icon: "💰", // Placeholder icon, puedes cambiarlo por una URL o componente SVG
+  },
+  {
+    name: "USD Coin",
+    symbol: "USDC",
+    address: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+    decimals: 6,
+    icon: "💵", // Placeholder icon
+  },
+  // Ejemplo de cómo podrías añadir DAI en el futuro:
+  // {
+  //   name: "Dai Stablecoin",
+  //   symbol: "DAI",
+  //   address: "DIRECCION_DEL_CONTRATO_DAI_EN_CELO", 
+  //   decimals: 18,
+  //   icon: "🦓", // Placeholder icon
+  // },
+];
+
+/**
+ * Encuentra una stablecoin soportada por su símbolo.
+ * @param symbol El símbolo de la stablecoin (ej. "cUSD").
+ * @returns La información de la stablecoin si se encuentra, de lo contrario undefined.
+ */
+export const findStablecoinBySymbol = (symbol: string): Token | undefined => {
+  return SUPPORTED_STABLECOINS.find(coin => coin.symbol.toLowerCase() === symbol.toLowerCase());
+};
+
+/**
+ * Encuentra una stablecoin soportada por su dirección de contrato.
+ * @param address La dirección del contrato de la stablecoin.
+ * @returns La información de la stablecoin si se encuentra, de lo contrario undefined.
+ */
+export const findStablecoinByAddress = (address: string): Token | undefined => {
+  return SUPPORTED_STABLECOINS.find(coin => coin.address.toLowerCase() === address.toLowerCase());
+};
